@@ -63,10 +63,7 @@ const Client = (animatedStyle) => {
                                     </View>
 
                                     <TouchableOpacity style={clientStyles.iconBox}>
-                                        
-                                        
-                                            <AntDesign name="delete" size={24} color="black" />
-                                        
+                                        <AntDesign name="delete" size={24} color="black" />
                                     </TouchableOpacity>
                                 </View>
                             )
