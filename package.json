@@ -9,6 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^0.17.0",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-native-material/core": "^1.3.7",
@@ -17,6 +18,7 @@
     "@react-navigation/native": "^6.0.13",
     "@react-navigation/stack": "^6.3.2",
     "expo": "~46.0.16",
+    "expo-font": "~10.2.0",
     "expo-splash-screen": "^0.16.2",
     "expo-status-bar": "~1.4.0",
     "moment": "^2.29.4",
@@ -31,8 +33,7 @@
     "react-native-uuid": "^2.0.1",
     "react-native-vector-icons": "^9.2.0",
     "react-native-web": "^0.18.9",
-    "styled-components": "^5.3.6",
-    "expo-font": "~10.2.0"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

@@ -9,35 +9,35 @@ const InvoiceInfo = [
     {
         invoiceId: 'INV0001',
         invoiceDate: '2022/10/28',
-        clientName: 'Roshitha',
+        clientFirstName: 'Roshitha',
         totalAmount: 2500.00,
         paymentStatus: 'Unpaid'
     },
     {
         invoiceId: 'INV0002',
         invoiceDate: '2022/10/28',
-        clientName: 'Dulim',
+        clientFirstName: 'Dulim',
         totalAmount: 1500.00,
         paymentStatus: 'Unpaid'
     },
     {
         invoiceId: 'INV0003',
         invoiceDate: '2022/10/28',
-        clientName: 'Dinesh',
+        clientFirstName: 'Dinesh',
         totalAmount: 3000.00,
         paymentStatus: 'Paid'
     },
     {
         invoiceId: 'INV0004',
         invoiceDate: '2022/10/28',
-        clientName: 'Sadun',
+        clientFirstName: 'Sadun',
         totalAmount: 5800.00,
         paymentStatus: 'Paid'
     },
     {
         invoiceId: 'INV0005',
         invoiceDate: '2022/10/28',
-        clientName: 'Lakmal',
+        clientFirstName: 'Lakmal',
         totalAmount: 2500.00,
         paymentStatus: 'Unpaid'
     },
@@ -105,7 +105,7 @@ const Home = ({animatedStyle}) => {
                         </View>
 
                         <View style={{ flexDirection: 'column'}}>
-                            <Text style={{textAlign: 'right', fontSize: 18}}>{data.clientName}</Text>
+                            <Text style={{textAlign: 'right', fontSize: 18}}>{data.clientFirstName}</Text>
                             <Text style={{ textAlign: 'right',marginTop: 15, fontSize: 22}}>RS {data.totalAmount}.00</Text>
                             <Text style={{
                                 backgroundColor: data.paymentStatus === "Paid" ? "#13c6258d" : "#f91b1b78",
