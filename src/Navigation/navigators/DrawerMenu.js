@@ -11,7 +11,7 @@ import { McText, McImage } from '../../Components'
 import { Images } from '../../Constants'
 import Logo from '../../../assets/images/logo-c.png'
 import Bg2 from '../../../assets/images/bg-2.jpg'
-import { Home, Client, Business, Login } from '../../Screens'
+import { Home, Client, Business, Login, Items } from '../../Screens'
 
 const MENUs = [
     {
@@ -29,6 +29,10 @@ const MENUs = [
     {
         name: 'Login',
         label: 'Login'
+    },
+    {
+        name: 'Items',
+        label: 'Items'
     },
 ]
 
@@ -216,6 +220,9 @@ const DrawerMenu = () => {
                 </Drawer.Screen>
                 <Drawer.Screen name='Client'>
                     {(props) => <Client {...props} animatedStyle={animatedStyle} />}
+                </Drawer.Screen>
+                <Drawer.Screen name='Items'>
+                    {(props) => <Items {...props} animatedStyle={animatedStyle} />}
                 </Drawer.Screen>
                 <Drawer.Screen name='Login' options={{headerShown: false}}>
                     {(props) => <Login {...props} animatedStyle={animatedStyle} />}
