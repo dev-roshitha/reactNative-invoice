@@ -7,30 +7,30 @@ import { AntDesign } from '@expo/vector-icons';
 import NoFound from '../../../assets/images/no-found.png'
 
 const ItemInfo = [
-    // {
-    //     itemName: "CR Book",
-    //     itemPrice: "250",
-    // },
-    // {
-    //     itemName: "Glue bottle",
-    //     itemPrice: "200",
-    // },
-    // {
-    //     itemName: "Blue pen",
-    //     itemPrice: "50",
-    // },
-    // {
-    //     itemName: "Plastic Card",
-    //     itemPrice: "80",
-    // },
-    // {
-    //     itemName: "Back Cover",
-    //     itemPrice: "400",
-    // },
-    // {
-    //     itemName: "Keyboard",
-    //     itemPrice: "800",
-    // },
+    {
+        itemName: "CR Book",
+        itemPrice: "250",
+    },
+    {
+        itemName: "Glue bottle",
+        itemPrice: "200",
+    },
+    {
+        itemName: "Blue pen",
+        itemPrice: "50",
+    },
+    {
+        itemName: "Plastic Card",
+        itemPrice: "80",
+    },
+    {
+        itemName: "Back Cover",
+        itemPrice: "400",
+    },
+    {
+        itemName: "Keyboard",
+        itemPrice: "800",
+    },
 ]
 
 const Items = (animatedStyle) => {

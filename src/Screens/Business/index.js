@@ -57,7 +57,10 @@ const Business = (animatedStyle) => {
                     {businessDetails.length === 0 ? 
                     <View style={businessStyles.emptyBusiness}>
                         <Image style={{width: 200, height: 200}} source={NoFound} />
-                        <Text>Nothing to show. To add business make a invoice</Text>
+                        <TouchableOpacity style={ItemsStyles.addBtn}>
+                            <Text style={{color: '#fff', fontSize: 30}}>+</Text>
+                        </TouchableOpacity>
+                        <Text>Nothing to show. Tap on "+" to add business</Text>
                     </View> : 
                     businessDetails.map((data, index) => {
                             return(
@@ -115,6 +118,17 @@ const businessStyles = StyleSheet.create({
     emptyBusiness: {
         paddingTop: "50%",
         alignItems: 'center'
+    },
+    addBtn: {
+        backgroundColor: '#2466bc',
+        paddingTop: 5,
+        paddingBottom: 5,
+        paddingLeft: 15,
+        paddingRight: 15,
+        marginBottom: 10,
+        marginTop: 10,
+        borderRadius: 40,
+        elevation: 10,
     }
 })
 

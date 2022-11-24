@@ -4,6 +4,7 @@ import Animated, { color } from 'react-native-reanimated';
 import { Stack, Button } from "@react-native-material/core";
 import Icon from "@expo/vector-icons/MaterialCommunityIcons";
 import EmptyImage from '../../../assets/empty.png'
+import MakeInvoice from '../MakeInvoice';
 
 const InvoiceInfo = [
     {
@@ -43,7 +44,7 @@ const InvoiceInfo = [
     },
 ]
 
-const Home = ({animatedStyle}) => {
+const Home = ({animatedStyle, navigation}) => {
     
     return (
         <Animated.View
@@ -69,6 +70,7 @@ const Home = ({animatedStyle}) => {
             <View style={{marginTop: 50, marginBottom: 50, height: 1}}>
                 <Stack fill center spacing={4}>
                     <Button
+                        onPress={ () => navigation.navigate('Make Invoice')}
                         tintColor="black"
                         color="#509ff9"
                         title={<Text style={{fontSize: 18, fontWeight: '600',}}>Make Invoice</Text>}
