@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import React from 'react'
 import Animated, { color } from 'react-native-reanimated'
 import { Fonts } from '../../Constants';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign ,Ionicons } from '@expo/vector-icons';
 
 const itemDetails = [
     {
@@ -70,6 +70,12 @@ const MakeInvoice = (animatedStyle, navigation) => {
                         )
                     })}
                 </ScrollView>
+                <View style={invStyles.genBtnSection}>
+                    <TouchableOpacity style={invStyles.genBtn}>
+                        <Text style={{fontFamily: Fonts.type.MontReg,}}>Generate Invoice  </Text>
+                        <Ionicons name="newspaper-outline" size={20} color="black" />
+                    </TouchableOpacity>
+                </View>
             </View>
         </Animated.View>
     )
@@ -154,6 +160,21 @@ const invStyles = StyleSheet.create({
     },
     priceSec: {
         alignItems: 'flex-end',
+    },
+    genBtnSection: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 100,
+    },
+    genBtn: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 50,
+        width: 160,
+        backgroundColor: '#68B984',
+        borderRadius: 10,
+        elevation: 10,
+        flexDirection: 'row'
     }
 })
 
