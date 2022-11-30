@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import React from 'react'
 import Animated, { color } from 'react-native-reanimated'
 import { Fonts } from '../../Constants';
-import { AntDesign } from '@expo/vector-icons';
+import { AntDesign, Ionicons } from '@expo/vector-icons';
 
 const itemDetails = [
     {
@@ -64,13 +64,19 @@ const MakeInvoice = (animatedStyle, navigation) => {
                                 </View>
         
                                 <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}}>
-                                        <AntDesign name="delete" size={24} color="black" />
+                                        <AntDesign name="delete" size={24} color="red" />
                                 </TouchableOpacity>
                             </View>
                         )
                     })}
 
                 </ScrollView>
+                <View style={invStyles.genBtnSection}>
+                    <TouchableOpacity style={invStyles.genBtn}>
+                        <Text style={{fontFamily: Fonts.type.MontReg,}}>Generate Invoice  </Text>
+                        <Ionicons name="newspaper-outline" size={20} color="black" />
+                    </TouchableOpacity>
+                </View>
             </View>
         </Animated.View>
     )
@@ -113,7 +119,7 @@ const invStyles = StyleSheet.create({
     },
     itemSection: {
         height: 320,
-        paddingTop: 15,
+        marginTop: 15,
         paddingRight: 10,
         paddingLeft: 10,
         paddingBottom: 15,
@@ -155,7 +161,23 @@ const invStyles = StyleSheet.create({
     },
     priceSec: {
         alignItems: 'flex-end',
+    },
+    genBtnSection: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 100,
+    },
+    genBtn: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 50,
+        width: 160,
+        backgroundColor: '#68B984',
+        borderRadius: 10,
+        elevation: 10,
+        flexDirection: 'row'
     }
+
 })
 
 export default MakeInvoice
