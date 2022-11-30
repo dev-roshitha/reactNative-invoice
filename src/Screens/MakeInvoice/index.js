@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-nati
 import React from 'react'
 import Animated, { color } from 'react-native-reanimated'
 import { Fonts } from '../../Constants';
-import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 const itemDetails = [
     {
