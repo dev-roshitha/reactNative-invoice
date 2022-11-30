@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
+import { Text, View, StyleSheet, ScrollView, TouchableOpacity, Button } from 'react-native'
 import React from 'react'
 import Animated, { color } from 'react-native-reanimated'
 import { Fonts } from '../../Constants';
@@ -27,7 +27,7 @@ const itemDetails = [
     }
 ]
 
-const MakeInvoice = (animatedStyle, navigation) => {
+const MakeInvoice = ({animatedStyle, navigation}) => {
     return(
         <Animated.View style={{ flex:1, ...animatedStyle,}}>
             <View>
@@ -64,7 +64,7 @@ const MakeInvoice = (animatedStyle, navigation) => {
                                 </View>
         
                                 <TouchableOpacity style={{alignItems: 'center', justifyContent: 'center'}}>
-                                        <AntDesign name="delete" size={24} color="black" />
+                                        <AntDesign name="delete" size={24} color="red" />
                                 </TouchableOpacity>
                             </View>
                         )
@@ -72,7 +72,7 @@ const MakeInvoice = (animatedStyle, navigation) => {
 
                 </ScrollView>
                 <View style={invStyles.genBtnSection}>
-                    <TouchableOpacity style={invStyles.genBtn}>
+                    <TouchableOpacity style={invStyles.genBtn} onPress={ () => navigation.navigate('PDF Invoice') }>
                         <Text style={{fontFamily: Fonts.type.MontReg,}}>Generate Invoice  </Text>
                         <Ionicons name="newspaper-outline" size={20} color="black" />
                     </TouchableOpacity>
