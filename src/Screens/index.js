@@ -5,5 +5,6 @@ import Login from './Login';
 import Items from './Items';
 import MakeInvoice from './MakeInvoice';
 import PdfScreen from './PdfScreen';
+import BusinessForm from './BusinessForm';
 
-export { Home, Client, Business, Login, Items, MakeInvoice, PdfScreen };
+export { Home, Client, Business, Login, Items, MakeInvoice, PdfScreen, BusinessForm };
