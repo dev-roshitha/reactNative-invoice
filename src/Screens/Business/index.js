@@ -45,7 +45,7 @@ const businessDetails = [
 
 ]
 
-const Business = (animatedStyle) => {
+const Business = ({animatedStyle, navigation}) => {
     return(
         <Animated.View style={{
             flex:1,
@@ -53,32 +53,41 @@ const Business = (animatedStyle) => {
         }}>
             
             <View>
-                <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
-                    {businessDetails.length === 0 ? 
+                {businessDetails.length === 0 ? 
                     <View style={businessStyles.emptyBusiness}>
                         <Image style={{width: 200, height: 200}} source={NoFound} />
-                        <TouchableOpacity style={ItemsStyles.addBtn}>
+                        <TouchableOpacity style={businessStyles.addBtn} onPress={ () => navigation.navigate('Add Business')}>
                             <Text style={{color: '#fff', fontSize: 30}}>+</Text>
                         </TouchableOpacity>
                         <Text>Nothing to show. Tap on "+" to add business</Text>
                     </View> : 
-                    businessDetails.map((data, index) => {
-                            return(
-                                <View key={index} style={businessStyles.businessBox}>
-                                    <View style={businessStyles.businessInfo}>
-                                        <Text style={{fontSize: 20, fontFamily: Fonts.type.MontReg, marginBottom: 5}}>{data.businessName}</Text>
-                                        <Text style={{fontFamily: Fonts.type.MontReg,}}>{data.businessEmail}</Text>
-                                        <Text style={{fontFamily: Fonts.type.MontReg,}}>{data.businessTelephone}</Text>
-                                    </View>
 
-                                    <TouchableOpacity style={businessStyles.iconBox}>
-                                        <AntDesign name="delete" size={24} color="black" />
-                                    </TouchableOpacity>
-                                </View>
-                            )
-                        })
-                    }
-                </ScrollView>
+                    <View>
+                        <View style={businessStyles.businessBtnBox}>
+                            <TouchableOpacity style={businessStyles.addBusinessBtn} onPress={ () => navigation.navigate('Add Business')}>
+                                <Text style={{fontFamily: Fonts.type.MontReg, color: '#fff'}}>Add New Business</Text>
+                            </TouchableOpacity>
+                        </View>
+                            <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
+                            {businessDetails.map((data, index) => {
+                                    return(
+                                        <View key={index} style={businessStyles.businessBox}>
+                                            <View style={businessStyles.businessInfo}>
+                                                <Text style={{fontSize: 20, fontFamily: Fonts.type.MontReg, marginBottom: 5}}>{data.businessName}</Text>
+                                                <Text style={{fontFamily: Fonts.type.MontReg,}}>{data.businessEmail}</Text>
+                                                <Text style={{fontFamily: Fonts.type.MontReg,}}>{data.businessTelephone}</Text>
+                                            </View>
+
+                                            <TouchableOpacity style={businessStyles.iconBox}>
+                                                <AntDesign name="delete" size={24} color="black" />
+                                            </TouchableOpacity>
+                                        </View>
+                                    )
+                                })
+                            }
+                            </ScrollView>
+                    </View>
+                }
             </View>
         </Animated.View>
     )
@@ -129,7 +138,25 @@ const businessStyles = StyleSheet.create({
         marginTop: 10,
         borderRadius: 40,
         elevation: 10,
-    }
+    },
+    businessBtnBox: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100,
+        paddingTop: 25,
+        paddingBottom: 25,
+    },
+    addBusinessBtn: {
+        backgroundColor: '#2466bc',
+        width: 150,
+        alignItems: 'center',
+        paddingTop: 13,
+        paddingBottom: 13,
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 10,
+        elevation: 10,
+    },
 })
 
 export default Business

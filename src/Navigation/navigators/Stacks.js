@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Client, Home, Business, Login, Items, MakeInvoice, PdfScreen } from '../../Screens';
+import { Client, Home, Business, Login, Items, MakeInvoice, PdfScreen, BusinessForm } from '../../Screens';
 import DrawerMenu from './DrawerMenu';
 import 'react-native-gesture-handler';
 
@@ -17,6 +17,7 @@ const Stacks = ({ params }) => (
             <Stack.Screen name="Items" component={Items} />
             <Stack.Screen name="Make Invoice" component={MakeInvoice} />
             <Stack.Screen name="PDF Invoice" component={PdfScreen} />
+            <Stack.Screen name="Add Business" component={BusinessForm} />
         </Stack.Navigator>
     </DrawerMenu>
 );
