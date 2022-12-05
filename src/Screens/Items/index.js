@@ -33,7 +33,7 @@ const ItemInfo = [
     },
 ]
 
-const Items = (animatedStyle) => {
+const Items = ({animatedStyle, navigation}) => {
     return(
         <Animated.View style={{
             flex:1,
@@ -41,16 +41,23 @@ const Items = (animatedStyle) => {
         }}>
             
             <View>
-                <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
-                    {ItemInfo.length === 0 ? 
+                {ItemInfo.length === 0 ?
                     <View style={ItemsStyles.emptyItems}>
                         <Image style={{width: 200, height: 200}} source={NoFound} />
                         <TouchableOpacity style={ItemsStyles.addBtn}>
                             <Text style={{color: '#fff', fontSize: 30}}>+</Text>
                         </TouchableOpacity>
                         <Text>Nothing to show. Tap on "+" to add item</Text>
-                    </View> : 
-                    ItemInfo.map((data, index) => {
+                        </View> : 
+                        <View>
+                            <View style={ItemsStyles.ItemBtnView}>
+                                <TouchableOpacity style={ItemsStyles.addItemBtn} onPress={ () => navigation.navigate('Add Item')}>
+                                    <Text style={{fontFamily: Fonts.type.MontReg, color: '#fff'}}>Add New Business</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                            <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
+                            {ItemInfo.map((data, index) => {
                             return(
                                 <View key={index} style={ItemsStyles.itemBox}>
                                     <View style={ItemsStyles.itemInfo}>
@@ -66,6 +73,8 @@ const Items = (animatedStyle) => {
                         })
                     }
                 </ScrollView>
+                        </View>
+                }
             </View>
         </Animated.View>
     )
@@ -78,7 +87,7 @@ const ItemsStyles = StyleSheet.create({
         height: 130,
         backgroundColor: 'white',
         width: "100%",
-        height: 130,
+        height: 100,
         borderRadius: 10,
         elevation: 10,
         justifyContent: 'space-between',
@@ -116,7 +125,25 @@ const ItemsStyles = StyleSheet.create({
         marginTop: 10,
         borderRadius: 40,
         elevation: 10,
-    }
+    },
+    ItemBtnView: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100,
+        paddingTop: 25,
+        paddingBottom: 25,
+    },
+    addItemBtn: {
+        backgroundColor: '#2466bc',
+        width: 150,
+        alignItems: 'center',
+        paddingTop: 13,
+        paddingBottom: 13,
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 10,
+        elevation: 10,
+    },
 })
 
 export default Items

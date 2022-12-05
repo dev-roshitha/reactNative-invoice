@@ -39,7 +39,7 @@ const clientDetails = [
     },
 ]
 
-const Client = (animatedStyle) => {
+const Client = ({animatedStyle, navigation}) => {
     return(
         <Animated.View style={{
             flex:1,
@@ -47,8 +47,7 @@ const Client = (animatedStyle) => {
         }}>
             
             <View>
-                <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
-                    {clientDetails.length === 0 ? 
+                {clientDetails.length === 0 ?
                     <View style={clientStyles.emptyClient}>
                         <Image style={{width: 200, height: 200}} source={NoFound} />
                         <TouchableOpacity style={ItemsStyles.addBtn}>
@@ -56,7 +55,15 @@ const Client = (animatedStyle) => {
                         </TouchableOpacity>
                         <Text>Nothing to show. Tap on "+" to add client</Text>
                     </View> : 
-                    clientDetails.map((data, index) => {
+                    <View>
+                        <View style={clientStyles.clientBtnBox}>
+                            <TouchableOpacity style={clientStyles.addClientBtn} onPress={ () => navigation.navigate('Add Client')}>
+                                <Text style={{fontFamily: Fonts.type.MontReg, color: '#fff'}}>Add New Business</Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        <ScrollView style={{paddingLeft: 10, paddingRight: 10, height: 750}}>
+                        {clientDetails.map((data, index) => {
                             return(
                                 <View key={index} style={clientStyles.clientBox}>
                                     <View style={clientStyles.clientInfo}>
@@ -72,9 +79,9 @@ const Client = (animatedStyle) => {
                             )
                         })
                     }
-
-
                 </ScrollView>
+                    </View>
+                }
             </View>
         </Animated.View>
     )
@@ -125,7 +132,25 @@ const clientStyles = StyleSheet.create({
         marginTop: 10,
         borderRadius: 40,
         elevation: 10,
-    }
+    },
+    clientBtnBox: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 100,
+        paddingTop: 25,
+        paddingBottom: 25,
+    },
+    addClientBtn: {
+        backgroundColor: '#2466bc',
+        width: 150,
+        alignItems: 'center',
+        paddingTop: 13,
+        paddingBottom: 13,
+        paddingLeft: 10,
+        paddingRight: 10,
+        borderRadius: 10,
+        elevation: 10,
+    },
 })
 
 export default Client
